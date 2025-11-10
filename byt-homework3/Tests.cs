@@ -56,6 +56,4 @@ public class Tests
     {
         Assert.That(cylinder.CalculateVolume(), Is.EqualTo(Math.PI*45*45*10).Within(0.001));
     }
-
-    //todo : Complete the remaning tests here
 }
