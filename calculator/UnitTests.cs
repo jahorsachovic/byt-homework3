@@ -41,4 +41,28 @@ public class Tests
     {
         Assert.Throws<InvalidOperationException>(() => calculator.Calculate(6, 7, "_="));
     }
+
+    [Test]
+    public void TestNegativeAPlusNegativeB()
+    {
+        Assert.That(calculator.Calculate(-5,-10,"+"), Is.EqualTo(-15));
+    }
+
+    [Test]
+    public void TestNegativeAMultiplyB()
+    {
+        Assert.That(Calculator.Calculate(-5, 10, "*"), Is.EqualTo(-50));
+    }
+
+    [Test]
+    public void TestNegativeADividePositiveB()
+    {
+        Assert.That(Calculator.Calculate(-10, 5), Is.EqualTo(-2));
+    }
+
+    [Test]
+    public void TestFloatingPointDivision()
+    {
+        Assert.That(Calculator.Calculate(10, 3), Is.InRange(3.33, 3.34));
+    }
 }
